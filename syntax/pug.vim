@@ -41,7 +41,8 @@ syn region  pugJavascriptString start=+"+  skip=+\\\("\|$\)+  end=+"\|$+ contain
 syn region  pugJavascriptString start=+'+  skip=+\\\('\|$\)+  end=+'\|$+ contained
 syn region  pugJavascriptString start=+`+  skip=+\\\(`\|$\)+  end=+`\|$+ contained
 syn match   pugAttrAssignment '=' contained
-syn region  pugAttributes matchgroup=pugAttributesDelimiter start="(" end=")" contained contains=pugJavascriptString,pugHtmlArg,pugAngular2,htmlArg,htmlEvent,htmlCssDefinition,pugAttrAssignment nextgroup=@pugComponent
+syn match   pugAttrSeparator ',' contained
+syn region  pugAttributes matchgroup=pugAttributesDelimiter start="(" end=")" contained contains=pugJavascriptString,pugHtmlArg,pugAngular2,htmlArg,htmlEvent,htmlCssDefinition,pugAttrAssignment,pugAttrSeparator nextgroup=@pugComponent
 syn match   pugClassChar "\." containedin=htmlTagName nextgroup=pugClass
 syn match   pugBlockExpansionChar ":\s\+" contained nextgroup=pugTag,pugClassChar,pugIdChar
 syn match   pugIdChar "#[[{]\@!" contained nextgroup=pugId
